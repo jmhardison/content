@@ -31,7 +31,7 @@ Make sure to follow these steps to correctly configure your device running Windo
 
     ![PowerShell console]({{site.baseurl}}/images/powershell/ps.PNG)
 
-* Note: you may need to start the WinRM service on your desktop to enable remote connections. From the PS console type the following command:
+	**NOTE:** you may need to start the WinRM service on your desktop to enable remote connections. From the PS console type the following command:
 
         net start WinRM
 
@@ -41,13 +41,17 @@ Make sure to follow these steps to correctly configure your device running Windo
 
     Do enter `Y` to confirm the change.
 
+	**NOTE:** If you want to connect multiple devices, you can use comma and quotation marks to separate each devices.
+        
+        Set-Item WSMan:\localhost\Client\TrustedHosts -Value "<machine1-name or IP Address>,<machine2-name or IP Address>"
+	
 * Now you can start a session with you Windows IoT Core device. From you administrator PS console, type:
 
         Enter-PSSession -ComputerName <machine-name or IP Address> -Credential <machine-name or IP Address or localhost>\Administrator
 
     In the credential dialog enter the following default password: `p@ssw0rd`
-
-        NOTE: The connection process is not immediate and can take up to 30 seconds.
+    
+  **NOTE:** The connection process is not immediate and can take up to 30 seconds.
 
     If you successfully connected to the device, you should see the IP address of your device before the prompt.
 
@@ -66,6 +70,7 @@ Make sure to follow these steps to correctly configure your device running Windo
     Once this is done, you'll need to establish a new PowerShell session using Exit-PSSession and Enter-PSSession with the new credentials.
     
     	Exit-PSSession
+    	
     	Enter-PSSession -ComputerName <machine-name or IP Address> -Credential <machine-name or IP Address or localhost>\Administrator
 
 ###Troubleshooting Visual Studio Remote Debugger
@@ -87,6 +92,8 @@ Make sure to follow these steps to correctly configure your device running Windo
     After you reboot, since the computer name was changed, you will need to rerun this command in order to connect to your device using the new name:
 
         Set-Item WSMan:\localhost\Client\TrustedHosts -Value <new-name>
+        
+    Your Windows IoT Core Device should now be properly configured and ready to use!
 
 ###Commonly used utilities
 

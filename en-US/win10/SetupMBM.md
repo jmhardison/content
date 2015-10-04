@@ -3,13 +3,14 @@ layout: default
 title: Setup your MinnowBoard Max
 permalink: /en-US/win10/SetupMBM.htm
 lang: en-US
+deviceName: MBM
 ---
 
 #Get Started
 
 Learn how to set up the MinnowBoard Max hardware and connect it to your computer.
 
-{% include steps.html device="MBM" %}
+{% include steps.html device=page.deviceName %}
 
 ##What you need
 1. **A PC running Windows 10** (Prepared in the previous step)
@@ -72,7 +73,7 @@ The reason the bitness of the firmware has to match the bitness of the OS is tha
 
 ## Install the Windows 10 IoT Core tools
 
-1. [Download](http://go.microsoft.com/fwlink/?LinkId=616848) the ISO for MinnowBoard MAX from the Microsoft Download Center.
+1. Download a Windows 10 IoT Core image from our [downloads page](http://ms-iot.github.io/content/en-US/Downloads.htm){:target="_blank"}.
 
 2. **Save the ISO** to a local folder
 
@@ -148,4 +149,6 @@ The reason the bitness of the firmware has to match the bitness of the OS is tha
 
 ##Additional Resources
 * [Supported Peripheral Interfaces and Devices]({{site.baseurl}}/{{page.lang}}/win10/SupportedInterfaces.htm){:target="_blank"}
+
+{% include nextsteps.html device=page.deviceName %}
 
