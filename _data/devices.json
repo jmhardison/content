@@ -19,12 +19,19 @@
          "start-text":"Start Now"
       },
       {
-         "name":"Galileo",
-         "link":"win8/SetupPC.htm",
-         "buy":"http://www.intel.com/content/www/us/en/do-it-yourself/where-to-buy.html#galileo",
-         "image":"Galileo_0.png",
-         "text":"Intel Galileo is the first in a line of Arduino-certified development boards based on Intel x86 architecture and is designed for the maker and education communities. Galileo supports only the previous versions of Windows, not Windows 10 IoT Core.",
-         "buy-text":"Buy a Galileo",
+         "name":"DragonBoard410c",
+         "link":"win10/SetupPCDB410c.htm",
+         "buy":"http://www.arrow.com/dragonboard410c",
+         "image":"DB410c.png",
+         "text":"The DragonBoard™ 410c based on Linaro 96Boards™ specification features the Qualcomm® Snapdragon™ 410 processor, a Quad-core ARM® Cortex™ A53 at up to 1.2GHz clock speed per core, capable of 32-bit and 64-bit operation. WLAN, Bluetooth, and GPS, all packed into a board the size of a credit card.",
+         "buy-text":"Buy a DragonBoard410c",
+         "start-text":"Start Now"
+      },
+      {
+         "name":"Arduino Wiring and UWP Lightning providers",
+         "link":"win10/Lightning.htm",
+         "image":"Lighning_0.png",
+         "text":"To enable the use of existing Arduino Wiring sketches on IoT Core devices, a project template for Arduino Wiring can now be used in Visual Studio. These projects make use of a direct memory mapped driver that offers high performance. Additionally, based on the same driver, a set of controller providers can be used in UWP apps to access GPIO, I2C and SPI controllers that offer high performance.",
          "start-text":"Start Now"
       },
       {
@@ -90,6 +97,13 @@
          "image":"Arduino_1.png",
          "text":"Windows Virtual Shields for Arduino 是一个开源库，主要用于与在所有 Window 10 设备（包括 Windows Lumia 手机）上运行的通用 Windows 应用程序通信的 Arduino UNO。该库向 Arduino Wiring Sketch 公开 Lumia 手机的传感器和功能。",
          "buy-text":"购买 Arduino",
+         "start-text":"立即开始"
+      },
+      {
+         "name":"Arduino Wiring and UWP Lightning providers",
+         "link":"win10/Lightning.htm",
+         "image":"Lighning_0.png",
+         "text":"To enable the use of existing Arduino Wiring sketches on IoT Core devices, a project template for Arduino Wiring can now be used in Visual Studio. These projects make use of a direct memory mapped driver that offers high performance. Additionally, based on the same driver, a set of controller providers can be used in UWP apps to access GPIO, I2C and SPI controllers that offers high performance.",
          "start-text":"立即开始"
       }
    ]
