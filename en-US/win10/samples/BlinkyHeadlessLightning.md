@@ -5,13 +5,15 @@ permalink: /en-US/win10/samples/BlinkyHeadlessLightning.htm
 lang: en-US
 ---
 
-##Blinky Headless Sample with Lightning Provider
+## Blinky Headless Sample with Lightning Provider
+
+{% include VerifiedVersion.md %}
 
 This sample demonstrates how to communicate with GPIO using the Micorosot.IoT.Providers.Lightning.I2cProvider
 
-It's based on the [BlinkyHeadless sample]({{site.baseurl}}/{{page.lang}}/win10/BlinkyHeadless.htm). And shares the same setup steps as well as most of the code. The only difference is setting the Lightning provider as the default controllers provider.
+It's based on the [BlinkyHeadless sample]({{site.baseurl}}/{{page.lang}}/win10/samples/BlinkyHeadless.htm). And shares the same setup steps as well as most of the code. The only difference is setting the Lightning provider as the default controllers provider.
 
-###Using Lightning Provider
+### Using Lightning Provider
 
 The original code of the Blinky Headless sample used the default GPIO provider for obtaining the GPIO controller:
 
@@ -81,7 +83,7 @@ private async void InitGPIO()
 {% endhighlight %}
 
 
-###Building and deploying the sample
+### Building and deploying the sample
 
 1. Enable Lightning on your Raspberry Pi2 or MBM device using the the steps outlined in the [Lightning Setup Guide]({{site.baseurl}}/{{page.lang}}/win10/LightningSetup.htm).
 

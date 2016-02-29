@@ -5,6 +5,13 @@ permalink: /en-US/win10/SupportedInterfaces.htm
 lang: en-US
 ---
 <style>
+.MsVerified 
+{
+	margin: 0 auto;
+  display: block;
+  width: 45px;
+  height: 40px;
+}
 a {cursor:pointer}
 h2 
 {
@@ -44,6 +51,10 @@ td:nth-child(5)
 {
     width: 200px;
 }
+td:nth-child(6)
+{
+    width: 100px;
+}
 .section {
 	padding-left: 10px;
 }
@@ -71,7 +82,7 @@ td:nth-child(5)
 </style>
 
 # {{page.title}}
-Windows 10 IoT Core supports a variety of peripheral interfaces and protocols, including support for common busses like I2C, UART, USB, and more. 
+Windows 10 IoT Core supports a variety of peripheral interfaces and protocols, including support for common busses like I2C, UART, USB, and more. This page lists known supported peripherals and is current as of the latest RTM release. Specific entries may only work on Insider releases and will be noted as such. 
 
 Browse, search, and filter, peripherals that are known to be supported on Windows 10 IoT Core devices. You can also contribute to this list on GitHub by clicking the "Contribute" links.  
 
@@ -110,9 +121,9 @@ Looking for information about supported hardware platforms? Click [here](https:/
 <div class="SearchResults" markdown="1">
 
 {:.table.table-bordered .SearchResults}
-Part Name / No. | Compatible Boards | Description | Notes  | Projects, Samples, Libraries |
-----------------|-------------------|-------------|--------|------------------------------|
-result          | result            | result      | result | result                       |
+Part Name / No. | Compatible Boards | Description | Notes  | Projects, Samples, Libraries |Microsoft Verified                  |
+----------------|-------------------|-------------|--------|------------------------------|------------------------------------|
+result          | result            | result      | result | result                       |result                              |
 
 </div></div>
 
@@ -269,6 +280,7 @@ result          | result            | result      | result | result             
 </script>
 
 <!-- Reference Links -->
+[MSVerified]: SupportedInterfaces/checkmark.svg "Microsoft Verified"
 [Contribute to this list on GitHub.]: {{site.repositoryurl}}{{ page.path }}
 [RPI2 Pin Mapping]: {{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsRPi2.htm#RPi2_I2C
 [MBM Pin Mapping]: {{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsMBM.htm#MBM_I2C

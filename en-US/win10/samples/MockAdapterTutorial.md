@@ -5,7 +5,9 @@ permalink: /en-US/win10/samples/MockAdapterTutorial.htm
 lang: en-US
 ---
 
-##Alljoyn Mock Adapter Sample
+## Alljoyn Mock Adapter Sample
+
+{% include VerifiedVersion.md %}
 
 You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/ms-iot/samples/archive/develop.zip) and navigating to the `samples-develop\AllJoyn\Samples\MockAdapter`.  The sample code is available in C++. Make a copy of the folder on your disk and open the project from Visual Studio.
 
@@ -15,7 +17,7 @@ This tutorial demonstrates the function of the AllJoyn Device System Bridge (DSB
 
 1. Raspberry Pi2 running Windows 10 IoT Core build 10240+
 2. PC or Laptop with Windows 10 build 10240+
-3. Install [AllJoyn Explorer]({{site.baseurl}}/en-US/win10/AllJoyn.htm#AllJoynExplorer){:target="_blank"}.
+3. Install [IoT Explorer for AllJoyn]({{site.baseurl}}/en-US/win10/AllJoyn.htm#AllJoynExplorer){:target="_blank"} app.
 
 ## Setting up the Raspberry Pi2
 
@@ -34,11 +36,11 @@ This tutorial demonstrates the function of the AllJoyn Device System Bridge (DSB
 4. 	In the Main menu bar, select “Debug” -> HeadlessAdapterApp properties…”
 5.	Follow the instructions to [setup remote debugging and deploy the app]({{site.baseurl}}/{{page.lang}}/win10/AppDeployment.htm#cpp)
 
-## Controlling the Mock Devices via Alljoyn Explorer
+## Controlling the Mock Devices via IoT Explorer for Alljoyn
 
-We will use the AllJoyn Explorer (AJX) to navigate the devices, objects and interfaces.
+We will use the IoT Explorer for AllJoyn to navigate the devices, objects and interfaces.
 
-Launch AlljoynExplorer. The AJX should find the following four devices:
+Launch IoT Explorer for AllJoyn app. The app should find the following four devices:
 
 * DSB Mock Adapter – Microsoft DSB: This is the Mock Adapter DSB
 * Mock BACnet Temperature Sensor - Microsoft Temperature Sensor 155: the mock temperature sensor device

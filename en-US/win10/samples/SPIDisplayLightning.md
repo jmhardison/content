@@ -5,13 +5,15 @@ permalink: /en-US/win10/samples/SPIDisplayLightning.htm
 lang: en-US
 ---
 
-##Communicate with SPI Display using Lightning providers
+## Communicate with SPI Display using Lightning providers
+
+{% include VerifiedVersion.md %}
 
 This sample demonstrates how to communicate with SPI bus controllers using the Micorosot.IoT.Providers.Lightning.SpiProvider
 
 It's based on the SPI Display sample shared on [SPI Display sample]({{site.baseurl}}/{{page.lang}}/win10/samples/SPIDisplay.htm). And shares the same setup steps and most of the code. The only difference is setting the Lightning provider as the default controllers provider.
 
-###Using Lightning Provider
+### Using Lightning Provider
 
 Using the default GPIO and SPI controllers, the original code for initializing SPI and GPIO controllers used the following:
 
@@ -125,7 +127,7 @@ private async Task InitGpio()
 }
 {% endhighlight %}
 
-###Building and deploying the sample
+### Building and deploying the sample
 
 1. Enable Lightning on your Raspberry Pi2 or MBM device using the the steps outlined in the [Lightning Setup Guide]({{site.baseurl}}/{{page.lang}}/win10/LightningSetup.htm).
 

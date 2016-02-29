@@ -6,6 +6,9 @@ lang: en-US
 ---
 
 # OneNote cloud services
+
+{% include VerifiedVersion.md %}
+
 Learn how to deploy an Arduino Wiring sketch on Raspberry Pi 2 or Minnowboard Max and use http messages to Get and Post OneNote pages.
 
 # Create a new project
@@ -126,19 +129,19 @@ There are a few ways to do this, and the Windows Live APIs can give you more inf
 7. Paste the token value into the `const std::wstring oauth_token` string at the top of the .ino sketch (copied from above). (Replace the entire current contents: `<PASTE YOUR TOKEN HERE>`)
 
 
-##Build and deploy
+## Build and deploy
 Press F5 to build and deploy your project.
 
 Refer to the [Arduino Wiring Project Guide]({{site.baseurl}}/{{page.lang}}/win10/ArduinoWiringProjectGuide.htm) for more instructions on how to deploy your app!
 
 
-#Result
+# Result
 
 After deploying, you will be able to log in to OneNote live at [http://onenote.com/hrd](http://onenote.com/hrd) or open OneNote from your Windows Desktop and view a newly added "ToDo" page in your workbook!
 
 If you also hook up a button to pin 29 (GPIO pin 5) and a simple POS printer, you can press the button to print your TODOs from your printer!
 
-##Having trouble?
+## Having trouble?
 
 Refer to the [Arduino Wiring Porting Guide]({{site.baseurl}}/{{page.lang}}/win10/ArduinoWiringPortingGuide.htm) for common issues and concerns when working with Arduino Wiring sketches.
 

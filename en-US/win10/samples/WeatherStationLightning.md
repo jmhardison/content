@@ -5,13 +5,15 @@ permalink: /en-US/win10/samples/WeatherStationLightning.htm
 lang: en-US
 ---
 
-##Communicate with an I2C sensor using Lightning I2c provider
+## Communicate with an I2C sensor using Lightning I2c provider
+
+{% include VerifiedVersion.md %}
 
 This sample demonstrates how to communicate with an I2c device using the Micorosot.IoT.Providers.Lightning.I2cProvider
 
 It's based on the WeatherShield sample shared on [Github](https://github.com/ms-iot/samples/tree/develop/WeatherStation/CS/WeatherStation). And shares the same setup steps and most of the code. The only difference is how the sensor device is initialized in each.
 
-###Using Lightning Provider
+### Using Lightning Provider
 
 The original sample used the default I2C provider for obtaining the I2C sensor device follows:
 
@@ -63,7 +65,7 @@ public async void Run(IBackgroundTaskInstance taskInstance)
 
 {% endhighlight %}
 
-###Building and deploying the sample
+### Building and deploying the sample
 
 1. Enable Lightning on your Raspberry Pi2 or MBM device using the the steps outlined in the [Lightning Setup Guide]({{site.baseurl}}/{{page.lang}}/win10/LightningSetup.htm).
 

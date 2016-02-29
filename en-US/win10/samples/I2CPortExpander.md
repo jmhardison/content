@@ -5,7 +5,9 @@ permalink: /en-US/win10/samples/I2CPortExpander.htm
 lang: en-US
 ---
 
-##I2C Port Expander Sample
+## I2C Port Expander Sample
+
+{% include VerifiedVersion.md %}
 
 ![I2C Port Expander Image]({{site.baseurl}}/images/I2CPortExpander/PortExpanderProjectPicture_480.png)
 
@@ -15,7 +17,7 @@ If you want to know more about I2C, SparkFun provides a great [tutorial on I2C](
 This is a headed sample, so please ensure that your device is in headed
 mode by running this command: `setbootoption.exe headed` (changing the headed/headless state will require a reboot).
 
-###Connect the I2C Port Expander to your device
+### Connect the I2C Port Expander to your device
 
 You will need the following components:
 
@@ -51,7 +53,7 @@ Here is the schematic:
 *Image made with [Fritzing](http://fritzing.org/)*
 
 
-####Connecting the MCP23008 Port Expander
+#### Connecting the MCP23008 Port Expander
 
 Place the MCP23008 Port Expander on your breadboard such that it straddles the center gap of the breadboard.
 
@@ -98,7 +100,7 @@ Make the following connections on the MCP23008 Port Expander:
 Leave the remaining pins on the MCP23008 unconnected.
 
 
-####Connecting the LED
+#### Connecting the LED
 
 * If not already connected, connect the cathode (the shorter leg) of the LED to Pin 10 of the MCP23008 Port Expander
 
@@ -107,7 +109,7 @@ Leave the remaining pins on the MCP23008 unconnected.
 * Connect the other end of the 330 &#x2126; resistor to the voltage supply rail on the side of the breadboard (red stripe)
 
 
-####Connecting the Tactile Switch
+#### Connecting the Tactile Switch
 
 * If not already connected, connect one lead of the 10k &#x2126; resistor to Pin 11 of the MCP23008 Port Expander
 
@@ -118,7 +120,7 @@ Leave the remaining pins on the MCP23008 unconnected.
 * Connect the other pin of the tactile switch to the ground rail on the side of the breadboard (blue stripe)
 
 
-####Connecting the Raspberry Pi 2
+#### Connecting the Raspberry Pi 2
 
 We need to hook up power, ground, and the I2C lines from on the Raspberry Pi 2 to the MCP23008 Port Expander and the breadboard.
 
@@ -135,7 +137,7 @@ We need to hook up power, ground, and the I2C lines from on the Raspberry Pi 2 t
 The I2C bus requires pull-up resistors on the SDA and SCL lines. However, the Raspberry Pi 2 SDA and SCL pins we are using in this sample already have pull-up resistors connected on the RPi2, so we don't need to add any additional external pull-ups.
  See the [Raspberry Pi 2 pin mapping page]({{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsRPi2.htm) for more details on the RPi2 IO pins.
 
-###Create the sample app
+### Create the sample app
 
 When everything is set up, power your device back on. You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/ms-iot/samples/archive/develop.zip) and navigating to the `samples-develop\I2CPortExpander`, 
 but as an exercise, this tutorial will take you through the complete steps to create this app from scratch. 
@@ -156,7 +158,7 @@ The code in this sample does several things:
 
 6. Checks if the user has changed the LED flash frequency and updates the LED flash frequency as needed
 
-####Add content to MainPage.xaml
+#### Add content to MainPage.xaml
 
 Let's add some content to the MainPage which will be displayed on a screen connected to the Raspberry Pi 2. We want to add a Circle, a couple TextBoxes and a Slider. The circle will emulate the on/off status of the LED. The Slider allows the user to control the frequency that the LED flashes. The Textboxes will provide info about the slider and report the tactile button status.
 
@@ -177,7 +179,7 @@ Let's add some content to the MainPage which will be displayed on a screen conne
 {% endhighlight %}
 </UL>
 
-####Add code to MainPage.xaml.cs
+#### Add code to MainPage.xaml.cs
 
 Before we add any code to MainPage.xaml.cs, we need to add a reference to the Windows IoT Extension SDK.
 
@@ -271,7 +273,6 @@ private async void InitializeSystem()
     try
     {
         var i2cSettings = new I2cConnectionSettings(PORT_EXPANDER_I2C_ADDRESS);
-        i2cSettings.BusSpeed = I2cBusSpeed.FastMode;
         string deviceSelector = I2cDevice.GetDeviceSelector(I2C_CONTROLLER_NAME);
         var i2cDeviceControllers = await DeviceInformation.FindAllAsync(deviceSelector);
         i2cPortExpander = await I2cDevice.FromIdAsync(i2cDeviceControllers[0].Id, i2cSettings);
@@ -401,7 +402,7 @@ private void CheckButtonStatus()
 }
 {% endhighlight %}
 
-###Build, Deploy and Run the App
+### Build, Deploy and Run the App
 
 Let's build, deploy and run the app on our Raspberry Pi 2.
 
@@ -415,7 +416,7 @@ After several moments, you will see the screen attached to the RPi2 change to sh
 
 Congratulations! You've successfully connected an I2C port expander to your Raspberry Pi 2.
 
-###The complete MainPage.xaml.cs code
+### The complete MainPage.xaml.cs code
 
 {% highlight C# %}
 using System;

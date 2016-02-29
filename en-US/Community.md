@@ -48,7 +48,7 @@ lang: en-US
   <div class="col-md-3">
     <h3>Forums</h3>
     <p>Forums are a great way to ask and answer technical questions and connect with fellow developers. We support the community through the following forums:</p>
-    <p>MSDN are our primary forums where you can ask us questions on all topics.</p>
+    <p>MSDN hosts the primary forums where you can ask us questions on all topics.</p>
     <p>
       <a href="https://social.msdn.microsoft.com/forums/en-US/home?forum=WindowsIoT" target="_blank">MSDN Forums &raquo;</a>
     </p>
@@ -92,10 +92,7 @@ lang: en-US
   <div class="col-md-3">
     <h3>Feedback</h3>
     <p>
-      Review or submit bugs for Microsoft and the community. Please make sure you are signed up to our <a href="https://connect.microsoft.com/windowsembeddediot/SelfNomination.aspx?ProgramID=8558" target="_blank">Microsoft Connect</a> program and signed in.
-    </p>
-    <p>
-      <a href="https://connect.microsoft.com/windowsembeddedIoT/Feedback" target="_blank" >Submit Feedback &raquo;</a>
+      Review or submit bugs for Microsoft and the community. 
     </p>
     <p>
       <a href='windows-feedback:?contextid=441&metadata={"Metadata":[{"OS":"IoTUAP"},{"Source":"WindowsOnDevices.com"}]}??' target="_blank">Windows 10 feedback tool <br />(Windows 10 only) &raquo;</a>

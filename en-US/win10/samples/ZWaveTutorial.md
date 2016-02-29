@@ -7,6 +7,8 @@ lang: en-US
 
 ## Z-Wave Sample
 
+{% include VerifiedVersion.md %}
+
 You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/ms-iot/samples/archive/develop.zip) and navigating to the `samples-develop\AllJoyn\Samples\ZWaveAdapter`.  The sample code is available in C++. Make a copy of the folder on your disk and open the project from Visual Studio.
 
 This tutorial demonstrates the function of the AllJoyn Device System Bridge (DSB) in exposing and controlling Z-Wave devices, and describes the setup of the AllJoyn Z-Wave demo that is provided at //Build/2015 as part of the Raspberry Pi2 image. It will demonstrate the function of the Z-Wave AllJoyn Device System Bridge (DSB) in exposing and controlling a Z-Wave device.
@@ -21,7 +23,7 @@ Z-Wave is a wireless communications protocol designed to allow devices in the ho
 2. <a name="AllJoyn_Z_Wave"></a>Z-Wave devices  Two Aeon Labs Z-Wave devices are needed for this demo:
   * Aeon Labs DSA02203-ZWUS Z-Wave Z-Stick Series 2 USB Dongle
   * Aeon Labs DSC24-ZWUS Smart Switch Z-Wave Appliance Module
-3. PC or Laptop with Windows 10 with installed [AllJoyn Explorer]({{site.baseurl}}/en-US/win10/AllJoyn.htm#AllJoynExplorer){:target="_blank"}.
+3. PC or Laptop with Windows 10 with installed [IoT Explorer for AllJoyn]({{site.baseurl}}/en-US/win10/AllJoyn.htm#AllJoynExplorer){:target="_blank"} app.
 
 
 ## Setting up the Raspberry Pi2
@@ -34,9 +36,9 @@ Z-Wave is a wireless communications protocol designed to allow devices in the ho
 
 ### To run previously installed
 
-The Z-Wave adapter DSB comes pre-installed for most Windows 10 IOT Core images. In that case, all you need is to launch the sample using SSH or WEBB. 
+The Z-Wave adapter DSB comes pre-installed for most Windows 10 IOT Core images. In that case, all you need is to launch the sample using SSH or Windows Device Portal. 
 
-1. Using [SSH]({{site.baseurl}}/en-US/win10/samples/SSH.htm){:target="_blank"} or [WEBB]({{site.baseurl}}/en-US/win10/tools/Webb.htm){:target="_blank"} run the following command
+1. Using [SSH]({{site.baseurl}}/en-US/win10/samples/SSH.htm){:target="_blank"} or [Windows Device Portal]({{site.baseurl}}/en-US/win10/tools/DevicePortal.htm){:target="_blank"} run the following command
    **iotstartup.exe add headless ZWave**
 2. Reboot the device. The Z-Wave adapter application now will be launched on boot.
 
@@ -62,9 +64,9 @@ The setup should look like in the picture below
 
 ## Controlling the Z-Wave switch via AllJoyn
 
-Let’s turn the Z-Wave power switch on! We will use the AllJoyn Explorer (AJX) to navigate the devices, objects and interfaces.
+Let’s turn the Z-Wave power switch on! We will use the IoT Explorer for AllJoyn application to navigate the devices, objects and interfaces.
 
-Launch AlljoynExplorer. The AJX should find the following three devices:
+Launch IoT Explorer for AllJoyn app. The app should find the following three devices:
 
 • ZWaveAdapter  – Microsoft DSB: This is the Z-Wave DSB
 • HomeID_xxx…  – Aeon Labs Smart Energy Switch: This is the Z-Wave power switch that is paired with the Z-Wave dongle

@@ -5,18 +5,20 @@ permalink: /en-US/win10/samples/SPIAccelerometer.htm
 lang: en-US
 ---
 
-##SPI Accelerometer Sample
+## SPI Accelerometer Sample
+
+{% include VerifiedVersion.md %}
 
 We'll connect an SPI accelerometer to your Raspberry Pi 2, MinnowBoard Max, or DragonBoard 410c and create a simple app to read data from it. We'll walk you through step-by-step, so no background knowledge of SPI is needed.
 However, if you're curious, SparkFun provides a great [tutorial on SPI](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi){:target="_blank"}.
 
 This is a headed sample.  To better understand what headed mode is and how to configure your device to be headed, follow the instructions [here]({{site.baseurl}}/{{page.lang}}/win10/HeadlessMode.htm).
 
-###Load the project in Visual Studio
+### Load the project in Visual Studio
 
 You can find the source code for this sample by downloading a zip of all of our samples [here](https://github.com/ms-iot/samples/archive/develop.zip) and navigating to the `samples-develop\Accelerometer`.  Make a copy of the folder on your disk and open the project from Visual Studio.
 
-###Connect the SPI Accelerometer to your device
+### Connect the SPI Accelerometer to your device
 
 You'll need a few components:
 
@@ -28,7 +30,7 @@ Visit the **Raspberry Pi 2/MinnowBoard Max** sections below depending on which d
 
 ![Electrical Components]({{site.baseurl}}/images/SPIAccelerometer/components.png)
 
-####Raspberry Pi 2
+#### Raspberry Pi 2
 If you have a Raspberry Pi 2, we need to hook up power, ground, and the SPI lines to the accelerometer.
  See the [Raspberry Pi 2 pin mapping page]({{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsRPi2.htm) for more details on the RPi2 IO pins.
 
@@ -55,7 +57,7 @@ Here are the schematics:
 
 ![Accelerometer schematics]({{site.baseurl}}/images/SPIAccelerometer/schematics_rpi2.png)
 
-####MinnowBoard Max
+#### MinnowBoard Max
 If you have a MinnowBoard Max, we need to hook up power, ground, and the SPI lines to the accelerometer.
  See the [MBM pin mapping page]({{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsMBM.htm) for more details on the MBM IO pins.
 
@@ -82,7 +84,7 @@ Here are the schematics:
 
 ![Accelerometer schematics]({{site.baseurl}}/images/SPIAccelerometer/schematics_mbm.png)
 
-####DragonBoard 410c
+#### DragonBoard 410c
 
 For the DragonBoard 410c, you will require a [Voltage-Level Translator Breakout](https://www.sparkfun.com/products/11771). The connections need to be made from the single board computer to the power, ground, and SPI lines of the accelerometer via the Voltage-Level Translator.
 
@@ -117,7 +119,7 @@ A schematic for the circuit is:
 
 ![DragonBoard API Accelerometer Schematic](../../../images/SPIAccelerometer/schematics_db410c.png)
 
-###Deploy and run the app
+### Deploy and run the app
 
 When everything is set up, power your device back on, and open up the sample app in Visual Studio. Open the file **MainPage.xaml.cs** and change the following line from **Protocol.NONE** to **Protocol.SPI**:
 
@@ -139,7 +141,7 @@ so you wont be able to see G readings higher than 4Gs.
 
 Congratulations! You've connected an SPI accelerometer.
 
-###Let's look at the code
+### Let's look at the code
 The code in this sample performs two main tasks:
 
 1. First the code initializes the SPI bus and the accelerometer
@@ -148,7 +150,7 @@ The code in this sample performs two main tasks:
 
 Let's start by digging into the initializations.
 
-###Initialize the SPI bus
+### Initialize the SPI bus
 To use the accelerometer, we need to initialize the SPI bus first. Here is the C# code.
 
 {% highlight C# %}
@@ -190,7 +192,7 @@ Here's an overview of what's happening:
 
 * Finally, we create a new **SpiDevice** from the first SPI controller on the system (**dis[0]**) and check that it's available for use.
 
-###Initialize the accelerometer
+### Initialize the accelerometer
 
 Now that we have the **SpiDevice** accelerometer instance, we're done with the SPI bus initialization. We can now write data over SPI to start up the accelerometer. We do this with the **Write()** function.
 For this particular accelerometer, there are two internal registers we need to configure before we can start using the device: The data format register, and the power control register.
@@ -232,7 +234,7 @@ private async void InitSPIAccel()
 }
 {% endhighlight %}
 
-###Timer code
+### Timer code
 After all the initializations are complete, we start a timer to read from the accelerometer periodically. Here is how you set up the timer to trigger every 100mS.
 {% highlight C# %}
 private async void InitSPIAccel()
@@ -264,7 +266,7 @@ private void TimerCallback(object state)
 }
 {% endhighlight %}
 
-###Read data from the accelerometer
+### Read data from the accelerometer
 With the SPI bus and accelerometer initialized, we can start reading data from the accelerometer. Our **ReadAccel()** function gets called every 100mS by the timer:
 
 {% highlight C# %}
