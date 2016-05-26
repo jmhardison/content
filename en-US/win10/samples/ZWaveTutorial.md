@@ -1,11 +1,11 @@
-﻿---
+---
 layout: default
 title: ZWaveTutorial
 permalink: /en-US/win10/samples/ZWaveTutorial.htm
 lang: en-US
 ---
 
-## Z-Wave Sample
+# Z-Wave Sample
 
 {% include VerifiedVersion.md %}
 

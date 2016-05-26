@@ -2,10 +2,10 @@
 layout: default
 title: SpiTestTool
 permalink: /zh-cn/win10/samples/SpiTestTool.htm
-lang: zh-cn
+lang: zh-CN
 ---
 
-## SpiTestTool 示例
+# SpiTestTool 示例
 
 {% include VerifiedVersion.md %}
 

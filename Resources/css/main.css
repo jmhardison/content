@@ -1,5 +1,4 @@
 body {
-    font-family: "Segoe UI Light","Segoe UI Web Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","HelveticaNeue-Light","Helvetica Neue",Arial,sans-serif !important;
     font-size: 11pt;
     margin: 0;
     padding: 0;
@@ -16,6 +15,17 @@ h1 {
 h2 {
     font-size: 1.9em;
     font-weight: 100;
+}
+
+h2 .step {
+    border: 1px solid #505050;
+    border-radius: 50%;
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.4;
+    margin-right: 10px;
+    text-align: center;
 }
 
 h3 {
@@ -126,9 +136,39 @@ a:link {
     margin-bottom: 50px;
 }
 
-    .iot-site-footer > .row > div > p {
+.iot-site-footer > .row > div > p {
         margin-bottom: 20px;
     }
+
+.iot-getstarted-list {
+    display: inline-block;
+    list-style: none;
+    list-style-position: outside;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 0px;
+    text-align: -webkit-match-parent;
+}
+
+.iot-getstarted-buttons {
+    display: block;
+    float: left;
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-width: 1px;
+    font-size: 16px;
+    margin: 0 9px 15px;
+    padding: 15px;
+    text-align: -webkit-match-parent;
+    cursor: pointer;
+}
+
+.iot-getstarted-buttons > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 a:hover {
     text-decoration: none;
@@ -178,8 +218,8 @@ a:hover {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 75%;
-    height: 200px;
+    width: 90%;
+    height: 300px;
     margin-top: 30px;
 }
 

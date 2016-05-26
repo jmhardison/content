@@ -2,10 +2,10 @@
 layout: default
 title: 创建 Windows 10 IoT 核心专业版映像
 permalink: /zh-cn/win10/CreateIoTCorePro.htm
-lang: zh-cn
+lang: zh-CN
 ---
 
-#创建 Windows 10 IoT 核心专业版映像
+# 创建 Windows 10 IoT 核心专业版映像
 
 下面是创建企业版映像的相关步骤
 

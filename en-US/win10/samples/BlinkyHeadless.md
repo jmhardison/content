@@ -6,7 +6,7 @@ lang: en-US
 ---
 
 {: .thin-header}
-## Blinky Headless Sample
+# Blinky Headless Sample
 
 {% include VerifiedVersion.md %}
 
@@ -60,7 +60,7 @@ To drive the GPIO pin, first we need to initialize it. Here is the C# code (noti
 {% highlight C# %}
 using Windows.Devices.Gpio;
 
-private async void InitGPIO()
+private void InitGPIO()
 {
     var gpio = GpioController.GetDefault();
 

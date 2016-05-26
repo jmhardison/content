@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Hardware Compatibility List
+description: Windows 10 IoT Core supports a variety of peripheral interfaces and protocols, including support for common buses like I2C, UART, USB, and more.
+keyword: windows iot, hardware, compatibility, interfaces
 permalink: /en-US/win10/SupportedInterfaces.htm
 lang: en-US
 ---
@@ -280,7 +282,7 @@ result          | result            | result      | result | result             
 </script>
 
 <!-- Reference Links -->
-[MSVerified]: SupportedInterfaces/checkmark.svg "Microsoft Verified"
+[MSVerified]: {{site.baseurl}}/Resources/images/checkmark.svg "Microsoft Verified"
 [Contribute to this list on GitHub.]: {{site.repositoryurl}}{{ page.path }}
 [RPi2 or RPi3 Pin Mapping]: {{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsRPi2.htm#RPi2_I2C
 [MBM Pin Mapping]: {{site.baseurl}}/{{page.lang}}/win10/samples/PinMappingsMBM.htm#MBM_I2C

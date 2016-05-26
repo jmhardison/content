@@ -6,7 +6,7 @@ lang: en-US
 ---
 
 # Release Notes for Windows 10 IoT Core
-Build Number 14262. February 2016
+Build Number 14342. May 2016
 
 &copy; 2016 Microsoft Corporation. All rights reserved
 
@@ -20,23 +20,20 @@ The privacy statement for this version of the Windows operating system can be vi
 
 You can review linked terms by pasting the forward link into your browser window.
 
-## What's New
-* First Windows 10 IoT Core Redstone Insiders Release
-	* Includes bug fixes to the core OS and driver packages
-	* Includes specific fixes addressing:
-		* Updates to the Web Management portal including UI and Stability updates
-		* Updates to the FTDI USB Serial Driver for the MinnowBoard Max/x86 platform
-		* Updates to the Silicon Labs USB Serial Driver
-		* Addresses stability issues in the SSH Server
+## What's new in this build: 
+* The minimum required storage space for the IoT Core FFUs has been reduced to 4GB. 
+	* With this change it is recommended that all application storage be done on the DATA partition. The MainOS partition should be reserved for the OS use. 
+* Updated OS files including core OS bug fixes
+
+
+## Known issues in this build: 
+* The latest Windows SDK (Build greater than 14337) is not compatible with this build, use the SDK included in with Visual Studio update 2
+* Ethernet and WiFi  on the Raspberry Pi 3 may fail on boot a reboot is required to resolve the issue. This issue is more prominent on slower SD cards. 
+
+
 
 
 ## Release Notes
-
-#### .NET Native Tool Chain
-Enabling "Compile with .NET Native tool chain" may cause applications to fail deployment due to errors with the deployment of .NET Native runtime. 
-
-#### Bluetooth Pairing (6162324)
-Bluetooth devices may not show properly in the Bluetooth pairing web management interface. 
 
 #### Minnowboard Max Boot and Firmware Update
 The MinnowBoard Max will not boot unless the firmware is version .082 or later. The minimum recommended version of the firmware is "MinnowBoard MAX 0.83 32-Bit". Firmware updates can be downloaded from [http://go.microsoft.com/fwlink/?LinkId=708613](http://go.microsoft.com/fwlink/?LinkId=708613){:target="_blank"}.
@@ -60,7 +57,7 @@ With this release of Windows 10 IoT Core for the Raspberry Pi 2, support for cam
 Hardware volume controls for USB microphones and speakers which depend on Windows system to change system volume are currently not supported on Windows 10 IoT Core.
 
 #### USB Keyboards 
-Some USB keyboards and mice may not work on IoT Core. Use a different keyboard or mouse. A list of validated peripheral devices can be found on the documentation at [http://go.microsoft.com/fwlink/?LinkId=619428](http://go.microsoft.com/fwlink/?LinkId=619428){:target="_blank"}.
+Some USB keyboards and mice may not work on IoT Core. Use a different keyboard or mouse. A list of validated peripheral devices can be found on the [documentation here](({{site.baseurl}}/{{page.lang}}/win10/SupportedInterfaces.htm){:target="_blank"}.
 
 #### Screen Orientation
 Setting the orientation to "Portrait" may not be honored in a Universal App
@@ -71,7 +68,7 @@ Attempting to add references to AllJoyn adapter projects may result in errors wh
 #### Serial Port Usage and Access on RPi2
 Raspberry Pi 2 supports the serial transport for communication through the PL011 UART.  This is set by default in kernel debugging scenarios.  An application or device driver can use the PL011 UART to send and receive data with the PL011 device driver turning off the debugger using the following command:  
 
-bcedit /set debug off
+bcdedit /set debug off
 
 #### <a name="wifidirect"></a>WiFi Direct limitations on IoTCore
 1. The IoTCore device has to be the connecting device – it will not work as the advertising device with another device initiating the connection.  
@@ -125,3 +122,31 @@ When app crash is detected:
       delay = (dword) ((float)BaseRetryDelayMs * (crashes_seen ** Fallback_exponent))
       wait for delay and relaunch app
 </pre>
+
+#### Raspberry Pi audio and direct memory mapped drivers (6678121)
+
+On Raspberry Pi, audio via the 3.5mm jack stops working when the direct memory mapped drivers are enabled.
+
+WORKAROUND: After the direct memory mapped drivers have been enabled, run:
+
+    reg add HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DeviceIds\ACPI\BCM2844 /v dmap.inf /t REG_BINARY /d 02ff0100
+    reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\enum\ACPI\bcm2844\0 /v ConfigFlags /t REG_DWORD /d 0x20
+    devcon restart acpi\bcm2844
+
+Verify that the driver for the PWM device node is `BCM2836 PWM Controller`:
+
+    C:\Data>devcon status acpi\bcm2844
+    ACPI\BCM2844\0
+        Name: BCM2836 PWM Controller
+        Driver is running.
+    1 matching device(s) found.
+
+#### Time Synchronization 
+If time sync is failing or timing out this may be due to unreachable or a distant time server, the following can be done to add additional or local time servers.
+
+* From a command line on the device (eg. SSH, Powershell)
+<pre>w32tm /config /syncfromflags:manual /manualpeerlist:"0.windows.time.com 1.pool.ntp.org 2.something else, ..."</pre>
+* You may also make these additions to the registry via a boot script or a custom runtime configuration package included as part of the image creation process if needed.
+	* For more details, see:
+		* https://msdn.microsoft.com/en-us/library/windows/hardware/mt670641(v=vs.85).aspx 
+		* https://blogs.msdn.microsoft.com/iot/2015/12/14/windows-10-iot-core-image-creation/  

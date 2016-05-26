@@ -2,7 +2,7 @@
 layout: default
 title: Intel Galileo 第 2 代 Alpha 支持
 permalink: /zh-cn/win8/Gen2.htm
-lang: zh-cn
+lang: zh-CN
 ---
 
 # 欢迎评估！
@@ -16,5 +16,5 @@ lang: zh-cn
 
 此版本旨在宣布和启用 Gen 2 支持、让社区试验并提供有关 Gen 2 支持的反馈。
 
-#设置说明
+## 设置说明
 只需遵循[设置电脑](SetupPC.htm){:target="_blank"}的说明

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Downloads
+description: Download Windows for IoT, Visual Studio, Software Development Kits or any of the other tools available on this page to get started developing for the Internet of Things today!
+keyword: dashboard, download, windows 10 iot core, tools
 permalink: /en-US/Downloads.htm
 lang: en-US
 ---
@@ -31,7 +33,7 @@ lang: en-US
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-12 col-sm-24">
     <h3 class="divider">Windows 10 IoT Core Release Image<br/></h3>
     <p>
       The November 2015 Release for Windows 10 IoT Core. The latest stable release.
@@ -49,10 +51,10 @@ lang: en-US
 		<a href="{{site.baseurl}}/{{page.lang}}/win10/ReleaseNotesRTM.htm"> Release notes. </a>
 		</p>
 	</div>
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-12 col-sm-24">
 		<h3 class="divider">Windows 10 IoT Core Insider Preview</h3>
 		<p>
-      The February 2016 Insider Preview for Windows 10 IoT Core. The most recent available image.
+      The March 2016 Insider Preview for Windows 10 IoT Core. The most recent available image.
     </p>
 		<p>
       Only available to <a href="https://insider.windows.com/">Windows Insiders</a>, and compatible with Raspberry Pi 2, Raspberry Pi 3, MinnowBoard Max and DragonBoard 410c*.
@@ -94,7 +96,7 @@ lang: en-US
   <div class="col-md-6">
     <h3>Windows Driver Kit 2015</h3>
     <p>Provides an integrated development environment for creating efficient high quality drivers for devices running Windows 10</p>
-    <a href="https://msdn.microsoft.com/en-US/windows/hardware/dn913721(v=vs.8.5).aspx" target="_blank">Learn More</a>
+    <a href="https://msdn.microsoft.com/en-US/windows/hardware/hh852365.aspx" target="_blank">Learn More</a>
   </div>
   <div class="col-md-6">
     <h3>Windows Developer Tools for Visual Studio</h3>

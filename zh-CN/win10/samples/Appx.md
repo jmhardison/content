@@ -2,10 +2,10 @@
 layout: default
 title: AppX 创建与部署
 permalink: /zh-cn/win10/samples/Appx.htm
-lang: zh-cn
+lang: zh-CN
 ---
 
-#创建 Appx 并将其部署到 Windows IoT Core
+# 创建 Appx 并将其部署到 Windows IoT Core
 
 了解如何创建 appx 程序包并将其部署到 Windows IoT Core。
 
