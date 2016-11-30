@@ -7,13 +7,14 @@
 {% else %}
 
     {% capture url %}
-    {{site.baseurl}}/{{page.lang}}{{page.url}}
+    {{site.baseurl}}/{{page.url}}
     {% endcapture %}
 
 {% endif %}
 
 
 <meta http-equiv="refresh" content="0;URL={{url}}">
+<link rel="canonical" href="{{url}}" /> 
 
 <script>
     window.location = '{{url}}';
